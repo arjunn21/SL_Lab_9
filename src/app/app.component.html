@@ -1,0 +1,41 @@
+<mat-toolbar color = "primary">
+  <span>Todo App</span>
+</mat-toolbar>
+<h3 *ngIf="this.todoservice.taskList.length >= 1">Todo (List format)</h3>
+<div class="width" style = "margin: 0 auto">
+  <mat-selection-list #tasks>
+    <mat-list-option *ngFor = "let task of this.todoservice.taskList">
+      {{task.detail}}
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+
+<h3 *ngIf="this.todoservice.taskList.length >= 1">Todo (Table Format)</h3>
+<div class="center">
+  <table border="1px" *ngIf="this.todoservice.taskList.length >= 1">
+    <tr>
+      <td><b>S.No</b></td>
+      <td><b>Task</b></td>
+    </tr>
+    <tr *ngFor="let item of this.todoservice.taskList">
+      <td>{{item.id}}</td>
+      <td>{{item.detail}}</td>
+    </tr>
+  </table>
+</div>
+<div class="center">
+  <mat-form-field id="input" class="hidden width">
+    <mat-label>Add Task</mat-label>
+    <input matInput placeholder="Task" name="input" #input>
+  </mat-form-field>
+  <button class="hidden" id="button" mat-raised-button (click)="submit(input.value)">Submit</button>
+
+</div>
+<div class="center">
+  <mat-card *ngIf="this.todoservice.taskList.length == 0">No tasks yet!</mat-card>
+  <button mat-raised-button color="accent" (click)="addData()">
+    Add task
+  </button>
+  <p class="lead" *ngIf="this.todoservice.taskList.length > 0">Tasks completed: {{tasks.selectedOptions.selected.length}}
+  </p>
+</div>

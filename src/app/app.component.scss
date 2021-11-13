@@ -1,0 +1,32 @@
+.center{
+    display: grid;
+    place-items: center;
+    padding: 1em;
+}
+.width{
+    width: 500px !important;
+}
+.lead{
+    margin-top: 1em;
+    margin-bottom: 2em;
+    margin-left: 1em;
+    font-size: 1.2em;
+}
+button{
+    margin: 7px;
+}
+.hidden{
+    display: none;
+}
+table{
+    color: #000;
+    width: 60%;
+    border-collapse: separate;
+    border-spacing: 0px;
+    border-radius: 4px;
+}
+tr{ background-color: #fff;}
+h3{
+    margin: 0 auto;
+    padding: 20px;
+}
